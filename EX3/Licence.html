@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licence
+    
+    </title>
+</head>
+<body style="text-align: center;">
+    <h1 >Inscription en Licence</h1>
+	<form action="video.html" methode="post" name="Licence">
+	<fieldset>
+		<legend>Informations personnelles</legend>
+		Votre nom : <input type="text" name="Nom" placeholder="Votre nom" > <br>
+		Votre prénom : <input type="text" name="Prénom" placeholder="Votre prenom" > <br>
+		Votre âge : <input type="number" name="Age" placeholder="Votre age" max="150"> <br>
+		Votre adresse : <textarea Name="adresse" rows="10" cols="30" placeholder="Votre adresse"> </textarea> <br>
+		Votre adresse e-mail : <input type="email" name="mail" > <br>
+		Votre site web : <input type="url" name="web" > <br>
+		Votre date de naissance : <input type="date" name="naiss" > <br>
+		Mot de passe : <input type="password" name="MDP" required > <br>
+		Retaper votre Mot de passe : <input type="password" name="MDP'" required > <br>
+	</fieldset>
+
+	<fieldset>
+		<legend aligin="Center"> Gestion des groupes et des options </legend>
+		Votre groupe : <input type="radio" Name="G" Value="Groupe1" > Groupe1<input type="radio" Name="G" Value="Groupe 2" >Groupe 2 <input type="radio" Name="G" Value="Groupe3"> Groupe 3<br>
+		Numéro de la carte d'étudiant <input type="number" name="NCE" placeholder="********"><br>
+		Choisissez l'option :<select name="options" size="4">
+			<option value="ad">Android</option>
+			<option value="ht">HTML5</option>
+			<option value="dot">.NET</option>
+			<option value="Cpp">C++</option>
+		</select><br>
+        Code INSAT: <input type="text" pattern="[I][N][S][A][T][0-9]{4}">
+	</fieldset>
+	
+	<input type="submit" value="Valider">
+	<input type="reset" value="Réinitialiser">
+
+	</form>
+</body>
+</html>
