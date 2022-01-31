@@ -1,0 +1,313 @@
+
+<DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+
+<head>
+<title>Cours HTML : les tableaux</title>
+<base href="http://www.snv.jussieu.fr/archambault/cours/html/">
+<LINK rel="STYLESHEET" href="styles/chtml.css" type="text/css">
+<style type="text/css"><!--
+BLOCKQUOTE EM {color:blue; font-weight:bolder}
+div.tabexe, div.tabexefloat {
+background:white;
+border:solid thin;
+}
+div.tabexefloat {
+float:right;
+}
+div.tabexe {
+width:100%;
+align:center;
+}
+--></style>
+
+</head>
+
+<body>
+<h1>Les tableaux</h1>
+
+<p class=entete>
+HTML permet de r&eacute;aliser des tableaux avec r&eacute;glage de
+l'encadrement, de la taille et de l'espacement des cellules.  Chaque
+cellule peut contenir du texte, des listes, des images, des liens
+hypertextes, des &eacute;l&eacute;ments de formulaire...
+
+
+<a name="structtableau"></a><h2>Structure d'un tableau</h2>
+
+<p>Un tableau est décrit par différents éléments :
+<ul>
+<li>L'élément <code>TABLE</code> correspond au tableau lui-même
+<li>L'élément <code>TR</code> est utilisé pour définir chacune des lignes
+du tableau
+<li>L'élément <code>TD</code> est utilisé pour chaque cellule
+</ul>
+
+<h3>L'élément <code>TABLE</code></h3>
+
+<p>Un tableau est donc débuté par une balise <code>&lt;TABLE&gt;</code> et
+se termine sur une balise <code>&lt;/TABLE&gt;</code>. Entre les deux, on
+définira les lignes et les cellules.
+
+<p>Les principaux attributs applicables à l'élément <code>TABLE</code> sont :
+<dl>
+
+<dt><code>border</code>
+<dd>pour sp&eacute;cifier l'&eacute;paisseur de la bordure ext&eacute;rieure
+
+<dt><code>cellpading</code>
+<dd>pour sp&eacute;cifier l'espace entre bordures et contenu des cellules
+
+<dt><code>cellspacing</code>
+<dd>pour sp&eacute;cifier l'&eacute;paisseur des bordures entre cellules
+
+</dl>
+
+<div class=exemple>
+<div class=tabexefloat>
+<TABLE border=6 cellspacing=12 cellpadding=20>
+<tr><td>A</td> <td>B</td> </tr>
+<tr><td>C</td> <td>D</td> </tr>
+</TABLE>
+</div>
+<span class=titre-exemple>Exemple</span>
+<pre>
+&lt;TABLE border=6 cellspacing=12 cellpadding=20&gt;
+...
+...
+&lt;/TABLE&gt;
+</pre>
+</div>
+
+<dl>
+<dt><code>width</code>
+<dd>permet de d&eacute;terminer quelle proportion de la
+largeur de la fen&ecirc;tre doit &ecirc;tre occup&eacute;e
+</dl>
+
+<div class=exemple>
+<pre>
+&lt;TABLE border=4 cellspacing=4 cellpadding=4 width=80%&gt;
+...
+&lt;/TABLE&gt;</pre>
+<div class=tabexe>
+<TABLE border=4 cellspacing=4 cellpadding=4 width=80%>
+<tr><td>A</td> <td>B</td> </tr>
+<tr><td>C</td> <td>D</td> </tr>
+</TABLE>
+</div>
+</div>
+
+<p>Remarque : si on ne pr&eacute;cise pas la taille des bordures, il n'y
+en a pas
+<div class=exemple>
+<div class=tabexefloat>
+<TABLE>
+<tr><td>A</td> <td>B</td> </tr>
+<tr><td>C</td> <td>D</td> </tr>
+</TABLE>
+</div>
+<pre>
+&lt;TABLE&gt;
+...
+...
+&lt;/TABLE&gt;
+</pre>
+</div>
+
+<h3>Les lignes</h3>
+<p>Chaque ligne est définie par l'élément <code>TR</code>.
+Reprenons notre exemple :
+
+<div class=exemple>
+<div class=tabexefloat>
+<TABLE border>
+<tr><td>A</td> <td>B</td> </tr>
+<tr><td>C</td> <td>D</td> </tr>
+</TABLE>
+</div>
+<pre>
+&lt;TABLE border&gt;
+&lt;TR&gt; ... A ... B ... &lt;/TR&gt;
+&lt;TR&gt; ... C ... D ... &lt;/TR&gt;
+&lt;/TABLE&gt;
+</pre>
+</div>
+
+<h3>Les cellules</h3>
+
+<p>Chaque cellule est ensuite construite à l'aide de l'élément
+<code>TD</code>.
+
+<div class=exemple>
+<div class=tabexefloat>
+<TABLE border>
+<tr><td>A</td> <td>B</td> </tr>
+<tr><td>C</td> <td>D</td> </tr>
+</TABLE>
+</div>
+<pre>
+&lt;TABLE border&gt;
+&lt;TR&gt; &lt;TD&gt;A&lt;/TD&gt;  &lt;TD&gt;B&lt;/TD&gt; &lt;/TR&gt;
+&lt;TR&gt; &lt;TD&gt;C&lt;/TD&gt;  &lt;TD&gt;D&lt;/TD&gt; &lt;/TR&gt;
+&lt;/TABLE&gt;
+</pre>
+</div>
+
+<p>L'élément <code>TD</code> peut être utilisé avec les attributs suivants :
+<dl>
+<dt><code>colspan</code>
+<dd>Indique que la cellule courante s'étend sur plusieurs colonnes.
+<dt><code>rowspan</code>
+<dd>Indique que la cellule courante s'étend sur plusieurs lignes.
+<dt><code>nowrap</code>
+<dd>Empêche les sauts de lignes à l'intérieur de la cellule courante.
+</dl>
+
+<div class=exemple>
+<div class=tabexefloat>
+<TABLE border>
+<tr><td>A</td> <td>B</td> <td>C</td> <td>D</td> <td>E</td> </tr>
+<tr><td rowspan=2>F</td> <td>G</td> <td colspan=3>H</td> </tr>
+<tr><td>I</td> <td>J</td> <td colspan=2 rowspan=2>K</td> </tr>
+<tr><td>L</td> <td>M</td> <td>N</td> </tr>
+</TABLE>
+</div>
+<pre>
+&lt;TABLE border&gt;
+&lt;TR&gt; &lt;TD&gt;A&lt;/TD&gt; &lt;TD&gt;B&lt;/TD&gt; &lt;TD&gt;C&lt;/TD&gt; &lt;TD&gt;D&lt;/TD&gt; &lt;TD&gt;E&lt;/TD&gt; &lt;/TR&gt;
+&lt;TR&gt; &lt;TD rowspan=2&gt;F&lt;/TD&gt; &lt;TD&gt;G&lt;/TD&gt; &lt;TD colspan=3&gt;H&lt;/TD&gt; &lt;/TR&gt;
+&lt;TR&gt; &lt;TD&gt;I&lt;/TD&gt; &lt;TD&gt;J&lt;/TD&gt; &lt;TD colspan=2 rowspan=2&gt;K&lt;/TD&gt; &lt;/TR&gt;
+&lt;TR&gt; &lt;TD&gt;L&lt;/TD&gt; &lt;TD&gt;M&lt;/TD&gt; &lt;TD&gt;N&lt;/TD&gt; &lt;/TR&gt;
+&lt;/TABLE&gt;
+</pre>
+</div>
+
+<a name="alignement"></a><h2>Alignement dans les cellules</h2>
+
+<p>Les attributs <code>align</code> et <code>valign</code> permettent
+de régler l'alignement à l'intérieur des cellules. Ils s'appliquent
+aux éléments <code>TR</code> et <code>TD</code>. Dans le cas de
+<code>TR</code> la valeur spécifiée s'applique à toutes les cellules
+de la ligne. Dans le cas de <code>TD</code> elle s'applique seulement
+à la cellule en cours.
+
+<p>Si une indication différente est donnée pour la ligne et pour une
+cellule, c'est celle donnée pour la cellule qui l'emporte.
+
+<dl>
+<dt><code>align</code> pour l'alignement horizontal
+<dd>Il peut prendre les valeurs : <code>right</code> (alignement à droite),
+<code>center</code> (centré) ou <code>left</code> (alignement à gauche).
+<dt><code>valign</code> pour l'alignement vertical
+<dd>Il peut prendre les valeurs : <code>top</code> (en haut),
+<code>middle</code> (centré verticalement) ou <code>bottom</code> (en bas).
+</dl>
+
+<div class=exemple>
+<pre>
+&lt;TABLE border width=100%&gt;
+&lt;TR&gt; &lt;TD&gt;A&lt;br&gt;ABCDE&lt;br&gt;A&lt;/TD&gt;  &lt;TD&gt;ABCDE&lt;/TD&gt;
+  &lt;TD&gt;ABCDE&lt;/TD&gt; &lt;TD&gt;ABCDE&lt;/TD&gt; &lt;/TR&gt;
+
+&lt;TR valign=top&gt; &lt;TD&gt;A&lt;BR&gt;ABCDE&lt;br&gt;A&lt;/TD&gt; &lt;TD&gt;ABCDE&lt;/TD&gt;
+  &lt;TD align=center&gt;ABCDE&lt;/TD&gt; &lt;TD&gt;ABCDE&lt;/TD&gt; &lt;/TR&gt;
+
+&lt;TR valign=bottom&gt; &lt;TD&gt;A&lt;BR&gt;ABCDE&lt;br&gt;A&lt;/TD&gt; &lt;TD&gt;ABCDE&lt;/TD&gt; 
+  &lt;TD&gt;ABCDE&lt;/TD&gt; &lt;TD valign=top&gt;ABCDE&lt;/TD&gt; &lt;/TR&gt;
+
+&lt;TR align=right&gt; &lt;TD&gt;A&lt;BR&gt;ABCDE&lt;br&gt;A&lt;/TD&gt; &lt;TD align=top&gt;ABCDE&lt;/TD&gt; 
+  &lt;TD&gt;ABCDE&lt;/TD&gt; &lt;TD valign=bottom&gt;ABCDE&lt;/TD&gt; &lt;/TR&gt;
+&lt;/TABLE&gt;
+</pre>
+<div class=tabexe>
+<TABLE border width=100%>
+<tr> <td>A<br>ABCDE<br>A</td> <td>ABCDE</td> <td>ABCDE</td> <td>ABCDE</td> </tr>
+<tr valign=top> <td>A<BR>ABCDE<br>A</td> <td>ABCDE</td> <td align=center>ABCDE</td> <td>ABCDE</td> </tr>
+<tr valign=bottom> <td>A<BR>ABCDE<br>A</td> <td>ABCDE</td> <td>ABCDE</td> <td valign=top>ABCDE</td> </tr>
+<tr align=right> <td>A<BR>ABCDE<br>A</td> <td align=top>ABCDE</td> <td>ABCDE</td> <td valign=bottom>ABCDE</td> </tr>
+</TABLE>
+</div>
+</div>
+
+<a name=complements></a><h2>Compléments</h2>
+<h3>Entêtes</h3>
+<p>L'élément <code>TH</code> permet de définir des cellules
+d'entête. Les navigateurs visuels par exemple utilisent cette
+information pour mettre ces cellules en gras. 
+
+<h3>Légendes</h3>
+<p>L'élément <code>CAPTION</code> permet de placer une l&eacute;gende
+au-dessus ou au-dessous d'un tableau (selon que l'attribut
+<code>align</code> a la valeur <code>top</code> ou
+<code>bottom</code>).
+
+<div class=exemple>
+
+<div class=tabexefloat>
+<TABLE border>
+<CAPTION align=bottom>Légende</CAPTION>
+<tr><TH>A</TH> <TH>B</TH> </tr>
+<tr><td>C</td> <td>D</td> </tr>
+</TABLE>
+</div>
+
+<pre>
+&lt;TABLE border&gt;
+&lt;CAPTION align=bottom&gt;Légende&lt;/CAPTION&gt;
+&lt;TR&gt; &lt;TH&gt;A&lt;/TH&gt;  &lt;TH&gt;B&lt;/TH&gt; &lt;/TR&gt;
+&lt;TR&gt; &lt;TD&gt;C&lt;/TD&gt;  &lt;TD&gt;D&lt;/TD&gt; &lt;/TR&gt;
+&lt;/TABLE&gt;
+</pre>
+</div>
+
+
+
+
+
+
+<hr>
+
+<h2>Exemple de tableau int&eacute;grant divers &eacute;l&eacute;ments</h2>
+<a href="tablo.htm">Le fichier tablo.htm</a>
+
+<hr>
+
+<h2>Divers attributs de la balise &lt;TABLE&gt;</h2>
+<p>
+L'attribut <tt>COLS</tt> permet de d&eacute;finir le nombre de colonnes du tableau.
+Cela permet au navigateur de l'afficher au fur et &agrave; mesure de sa r&eacute;ception
+Sinon, il faut atttendre que tout le tableau soit re&ccedil;u avant de pouvoir
+l'afficher.<br>
+<tt>
+&lt;TABLE cols=4&gt;<br>
+</tt>
+</p>
+
+<p>
+L'attribut <tt>FLOAT</tt> permet d'habiller un tableau avec du texte.<br>
+<tt>
+&lt;TABLE float=left&gt;<br>
+&lt;TABLE float=left&gt;
+</tt>
+
+</p>
+
+<p>
+L'attribut <tt>RULES</tt> permet de d&eacute;finir le type d'affichage des traits de s&eacute;paration
+horizontaux et verticaux.
+<dl compact>
+<dt><tt>rules=none</tt> <dd>Pas de traits de s&eacute;paration
+<dt><tt>rules=basic</tt> <dd>Traits entre l'en-t&ecirc;te, le corps et la fin du tableau
+<dt><tt>rules=rows</tt> <dd>Traits horizontaux entre chaques lignes
+<dt><tt>rules=cols</tt> <dd>Traits verticaux entre chaque colonne, plus traits horizontaux entre titre, coprs et fin du tableau
+<dt><tt>rules=all</tt> <dd>Quadrillage complet
+</dl>
+</p>
+
+</font>
+
+</body>
+
+</HTML>

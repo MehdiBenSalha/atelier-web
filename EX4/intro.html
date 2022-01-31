@@ -1,0 +1,153 @@
+
+<DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+
+<head>
+<title>Cours HTML : introduction</title>
+<base href="http://www.snv.jussieu.fr/archambault/cours/html/">
+<LINK rel="STYLESHEET" href="styles/chtml.css" type="text/css">
+</head>
+
+<body>
+<h1>Introduction</h1>
+
+<div class=sommaire><a name=sommaire></a><h2>Sommaire</h2>
+<ol class=sommaire>
+<li><a href="textes/intro.html#www"><strong>Le World Wide Web</strong></a>
+<li><a href="textes/intro.html#acces"><strong>Des sites accessibles à tous</strong></a>
+<ol><li><a href="textes/intro.html#contraintes">Contraintes</a>
+<li><a href="textes/intro.html#html40">HTML 4.0</a>
+</ol>
+<li><a href="textes/intro.html#premdoc"><strong>Un premier document HTML</strong></a>
+</ol>
+</div>
+
+<a name="www"></a><h2>Le World Wide Web</h2>
+
+<p>[...]
+
+<div class=navig>
+[&nbsp;<a href="index.html">Cours HTML</a>&nbsp;]
+[&nbsp;<a href="textes/intro.html#sommaire">Sommaire</a>&nbsp;]
+<hr></div>
+
+<a name="acces"></a><h2>Des sites accessibles à tous</h2>
+
+<p>Le terme <strong>«sites accessibles à tous»</strong> désigne des
+sites que tous les utilisateurs potentiels pourront visualiser de
+façon équivalente. Il s'agit en particulier d'utilisateurs aveugles
+qui consulteront les documents HTML par l'intermédiaire de synthèses
+vocales ou d'afficheurs braille, ou d'utilisateurs dont le handicap
+visuel nécessite l'utilisation de gros caractères. Mais sont concernés
+aussi les utilisateurs sourds ou déficients auditifs, les utilisateurs
+affectés de problèmes cognitifs. En dehors des problèmes de handicap,
+les utilisateurs d'accès par téléphone ou en voiture vont se trouver
+face aux mêmes types de problèmes.
+
+<blockquote>Construire des sites accessibles à tous ne présente
+cependant pas en général de contraintes très lourdes. L'expérience
+montre de plus que cela augmente la clarté des documents. D'autre
+part, cela permet bien souvent de gagner du temps lors de la rédaction
+de documents HTML.</blockquote>
+
+<a name="contraintes"><h3>Contraintes</h3>
+<p>Dans le cas d'un utilisateur déficient visuel, ou bien d'une
+consultation par téléphone, <strong>le document original n'est pas perçu
+globalement</strong> comme dans le cas de l'utilisation d'un navigateur
+graphique classique, mais ponctuellement, par fragments, que
+l'utilisateur doit en quelque sorte ré-assembler mentalement pour
+reconstituer l'information fournie dans le document.
+
+<p class=remarque>Un bon moyen de se rendre compte de ce problème de
+découper un rectangle de 2 cm de haut par 5 de large au milieu
+d’une feuille de papier, et de visualiser un document à travers ce
+trou, en utilisant un navigateur classique, ou bien de visualiser un
+document en réduisant la fenêtre du navigateur à la hauteur d’une
+ligne et la largeur de 2 mots.
+
+<p>Nous verrons aussi qu'il est nécessaire de rendre accessible les
+blocs d'information uniquement visuels en leur apportant <strong>un complément
+textuel dit alternatif</strong>, c'est-à-dire qui sera substitué à l'élément
+graphique dans le cas d'un navigateur incapable de le présenter. De
+même, les utilisateurs ne naviguent pas forcément tous avec des
+dispositifs de pointage visuels, comme une souris.
+
+<a name="html40"><h3>HTML 4.0</h3>
+<p>La norme HTML 4.0 donne tous les outils nécessaires pour écrire du
+code accessible. L'intérêt du langage HTML ne réside pas seulement
+dans le fait qu'il permet de faire une mise en page multimédia et
+hypertexte. Il permet d'aller beaucoup plus loin, en enrichissant le
+texte d'informations structurelles, voire sémantiques, que le logiciel
+client (le navigateur) peut utiliser en fonction des besoins, des
+préférences et des possibilités de l'utilisateur.
+
+<blockquote>Ce cours est entièrement basé sur les nouvelles
+spécifications d'HTML (HTML 4.0, décembre 1997), qui permettent
+d'améliorer de façon importante l'accessibilité des documents
+HTML.</blockquote>
+
+<div class=navig>
+[&nbsp;<a href="index.html">Cours HTML</a>&nbsp;]
+[&nbsp;<a href="textes/intro.html#sommaire">Sommaire</a>&nbsp;]
+<hr></div>
+
+<a name="premdoc"></a><h2>Un premier document HTML</h2>
+
+<div class=exemple>
+<span class=titre-exemple>Exemple</span>
+<PRE>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;Bienvenue dans l'estuaire de Seine&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+&lt;IMG src="images/titre.jpg" alt="L'estuaire de Seine" align=left border=0&gt;
+&lt;H1&gt;L'estuaire de Seine&lt;/H1&gt;
+&lt;p&gt;Lieu magique, rencontre du fleuve et de la mer, un environnement unique,
+l'estuaire de Seine est aussi un lieu de communication où sont réunis 
+tous les modes de transport humains.
+
+&lt;p&gt;Bienvenue sur ce site consacré à l'estuaire de la
+seine. Entre trois villes et deux ponts, des roselières, des vasières
+et un port.
+
+&lt;p&gt;Suivez le &lt;a href=menu.html title="Menu du site"&gt;guide&lt;/a&gt;, la visite 
+va commencer...
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+</pre>
+<span class=lien-exemple><a href="exemples/intro01.html">Voir cet 
+exemple</a></span></div>
+
+<p>Dans ce texte, remarquez qu'autour du contenu de la page (le texte
+effectivement affiché par le logiciel de navigation), apparaissent des
+zones encadrées par les caractères "&lt;" et "&gt;". Ces caractères
+permettent d'apporter des informations sur le rôle des différentes
+parties du texte, et sur la mise en page du document. Ils définissent
+ce qu'on appelle des éléments HTML. Essayez de retrouvez chacune des
+parties du texte en suivant le lien "voir cet exemple" ci-dessus.
+(pour revenir à cette page, utilisez le bouton "Précédent" de votre
+navigateur).
+
+<div class=navig>
+[&nbsp;<a href="index.html">Cours HTML</a>&nbsp;]
+[&nbsp;<a href="textes/intro.html#sommaire">Sommaire</a>&nbsp;]
+<hr>
+</div>
+
+<p class=fin-chap>Dans le <a href="textes/bases.html">chapitre suivant</a>, nous
+préciser cette notion d'élément, et élucider tous les symboles qui
+peuvent paraître bizarres dans ce premier exemple.
+
+<div class=signature>
+<hr title="séparation">
+Dominique Archambault, 1998
+</div>
+
+</body>
+</html>

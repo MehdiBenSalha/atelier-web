@@ -1,0 +1,319 @@
+
+<DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+
+<head>
+<title>Cours HTML : les images</title>
+<base href="http://www.snv.jussieu.fr/archambault/cours/html/">
+<LINK rel="STYLESHEET" href="styles/chtml.css" type="text/css">
+</head>
+
+<body>
+<h1><IMG src=images/lefranct.gif alt="Le France" align=right height=70>
+Intégrer des images</h1>
+
+<p class=entete>
+
+<div class=sommaire><a name=sommaire></a><h2>Sommaire</h2>
+<ol class=sommaire>
+<li><a href="textes/images.html#img"><strong>L'élément <code>&lt;IMG&gt;</code></strong></a>
+<li><a href="textes/images.html#attsopt"><strong>Les attributs optionnels de l'élément <code>&lt;IMG&gt;</code></strong></a>
+<li><a href="textes/images.html#imgclic"><strong>Les images cliquables</strong></a>
+<ol><li><a href="textes/images.html#imglien">Utiliser une image dans un lien</a>
+<li><a href="textes/images.html#imgcarte">Les cartes cliquables</a>
+</ol>
+</ol>
+</div>
+
+<a name="img"></a><h2>L'élément <code>&lt;IMG&gt;</code></h2>
+
+<p>On utilise l'élément <code>&lt;IMG&gt;</code> pour placer les images.
+Deux attributs sont obligatoires :
+<ul>
+<li>L'attribut <code>src</code> pour spécifier le nom du fichier
+image à charger. Les fichiers image doivent impérativement être aux
+formats <code>GIF</code> ou <code>JPG</code>.
+<li>L'attribut <code>alt</code> pour indiquer un contenu alternatif,
+c'est à dire un texte à afficher à la place de l'image lorsque, pour
+différentes raisons, elle n'apparaît pas.
+</ul>
+
+<div class=exemple><pre>
+&lt;IMG src=lefrance.gif alt="Le France"&gt;
+Le &lt;STRONG&gt;France&lt;/STRONG&gt; a...</pre>
+
+<div class=ex-visu>
+<IMG src=images/lefrance.gif alt="Le France">
+Le <strong class=exemple>France</strong> a &eacute;t&eacute; construit
+en 1957. Pour vous donner une id&eacute;e de sa puissance, un chiffre
+suffit : chacune des deux h&eacute;lices qui servent de propulseurs
+p&egrave;se 18 tonnes. La vitesse est de 25 noeuds, soit 25 milles
+marins &agrave; l'heure ou, pour parler terrien, plus de 46
+km/h.</div></div>
+
+<a name="attsopt"></a><h2>Les attributs optionnels de l'élément <code>&lt;IMG&gt;</code></h2>
+
+<h3>L'attribut <code>align</code></h3>
+<p>Il indique le mode d'alignement de l'image. Il y a 5 valeurs
+possibles : <code>top</code>, <code>middle</code>,
+<code>bottom</code>, <code>left</code>, <code>right</code>. Les trois
+premiers concernent l'alignement vertical par rapport à la ligne.
+
+<div class=exemple><pre>
+Voilà un joli bateau qui entre dans l'estuaire.&lt;br&gt;
+Ici, il est aligné sur le haut
+&lt;img src=images/bateau01.jpg alt="Un bateau sur la seine" align=top&gt;,
+puis au milieu
+&lt;img src=images/bateau01.jpg alt="Un bateau sur la seine" align=middle&gt;,
+et enfin sur le bas de la ligne
+&lt;img src=images/bateau01.jpg alt="Un bateau sur la seine" align=bottom&gt;.</pre></div>
+
+<div class=ex-visu>
+Voilà un joli bateau qui entre dans l'estuaire.<br>
+Ici, il est aligné sur le haut <img src=images/bateau01.jpg alt="Un bateau sur la seine" align=top>,
+puis au milieu
+<img src=images/bateau01.jpg alt="Un bateau sur la seine" align=middle>,
+et enfin sur le bas de la ligne
+<img src=images/bateau01.jpg alt="Un bateau sur la seine" align=bottom>.
+</div>
+
+<p>Les valeurs <code>left</code> et <code>right</code> permettent
+d'habiller une image avec le texte, en plaçant l'image respectivement
+à gauche et à droite.
+
+<div class=exemple><pre>
+&lt;IMG src=lefrance.gif alt="Le France" align=left&gt;
+Le &lt;STRONG&gt;France&lt;/STRONG&gt; a...</pre>
+
+<div class=ex-visu>
+<IMG src=images/lefrance.gif alt="Le France" align=left width=300>
+Le <strong class=exemple>France</strong> a &eacute;t&eacute; construit
+en 1957. Pour vous donner une id&eacute;e de sa puissance, un chiffre
+suffit : chacune des deux h&eacute;lices qui servent de propulseurs
+p&egrave;se 18 tonnes. La vitesse est de 25 noeuds, soit 25 milles
+marins &agrave; l'heure ou, pour parler terrien, plus de 46
+km/h.</div>
+<pre>&lt;IMG src=lefrance.gif alt="Le France" align=right&gt;
+Le &lt;STRONG&gt;France&lt;/STRONG&gt; a...</pre>
+
+<div class=ex-visu>
+<IMG src=images/lefrance.gif alt="Le France" align=right width=300>
+Le <strong class=exemple>France</strong> a &eacute;t&eacute; construit
+en 1957. Pour vous donner une id&eacute;e de sa puissance, un chiffre
+suffit : chacune des deux h&eacute;lices qui servent de propulseurs
+p&egrave;se 18 tonnes. La vitesse est de 25 noeuds, soit 25 milles
+marins &agrave; l'heure ou, pour parler terrien, plus de 46
+km/h.</div></div>
+
+
+
+<h3>L'attribut <code>border</code></h3>
+<p>Permet de régler l'épaisseur du trait entourant l'image, en
+pixels.  La valeur <code>0</code> signifie qu'il n'y a pas de bordure
+(c'est la valeur par défaut sauf dans le cas où l'image est dans un
+lien).
+
+<div class=exemple><pre>
+&lt;IMG src=lefrance.gif alt="Le France" border=3 align=left&gt;
+Le &lt;STRONG&gt;France&lt;/STRONG&gt; a...</pre>
+
+<div class=ex-visu>
+<IMG src=images/lefrance.gif alt="Le France" border=3 align=left width=200>
+Le <strong class=exemple>France</strong> a &eacute;t&eacute; construit
+en 1957. Pour vous donner une id&eacute;e de sa puissance, un chiffre
+suffit : chacune des deux h&eacute;lices qui servent de propulseurs
+p&egrave;se 18 tonnes. La vitesse est de 25 noeuds, soit 25 milles
+marins &agrave; l'heure ou, pour parler terrien, plus de 46
+km/h.</div></div>
+
+
+<h3>Les attributs <code>width</code> et <code>height</code></h3>
+<img src=images/bateau01.jpg alt="Un bateau sur la seine" align=right width=300>
+<p>Ils permettent de déterminer la hauteur et la largeur de l'image,
+en pixels. 
+<p>Il faut <strong>toujour éviter de les utiliser pour redimensionner
+l'image</strong>. Mieux vaut utiliser un logiciel de dessin pour modifier la
+taille de l'image source :
+<ul>
+<li>Essayer d'agrandir une image par ce moyen donne de mauvais résultats (voir à droite)
+<li>Réduire une image par ce biais n'altère pas la qualité de
+l'affichage. En revanche, dans ce cas, l'image téléchargée sur le
+réseau est trop grosse, ce qui fait perdre beaucoup de temps à
+l'utilisateur.
+</ul>
+
+<p style="color:green;font-weight:bold;">
+Malgré tout, la mise à jour de ces attributs permet au navigateur
+d'afficher un cadre correctement dimensionné à la place de l'image, et
+du même coup l'affichage correct du reste de la page, pendant le temps
+de chargement de l'image elle-même, comme ci-dessous.
+
+<p style="margin-top:2em;"><img src="" alt="Quelle image magnifique..." width=400 height=50 align=left>
+(l'image a été volontairement retirée pour simuler l'apparence durant 
+le chargement des images).
+
+<h3>Les attributs <code>hspace</code> et <code>vspace</code></h3>
+<p>Permettent de déterminer les espaces, en pixels, entre l'image et
+le texte autour (<code>hspace</code> horizontalement et
+<code>vspace</code> verticalement).
+
+
+<div class=navig>
+[&nbsp;<a href="index.html">Cours HTML</a>&nbsp;]
+[&nbsp;<a href="textes/structure.html#sommaire">Sommaire</a>&nbsp;]
+<hr>
+</div>
+
+<a name=imgclic></a><h2>Les images cliquables</h2>
+
+<a name=imglien></a><h3>Utiliser une image dans un lien</h3>
+
+<p>L'utilisation d'une image comme étiquette dans un lien ne pose bien
+entendu aucun problème. Il suffit de placer un élément
+<code>IMG</code> dans un élément <code>A</code>. Attention toutefois :
+par défaut les images cliquables ont une bordure de la couleur des
+liens. Pour la supprimer, il faut utiliser l'attribut
+<code>border</code> (en lui attribuant la valeur 0).
+
+<div class=exemple><pre>
+&lt;A href="exemples/lefrance.html"&gt;&lt;IMG src=lefranc_.gif alt="Le France"&gt;&lt;/A&gt;
+Cliquer sur la vignette pour aller voir une belle photo &lt;STRONG&gt;France&lt;/STRONG&gt; (36ko)</pre>
+
+<div class=ex-visu>
+<A href="exemples/lefrance.html"><IMG src=exemples/lefranc_.gif alt="Le France"></A>
+Cliquer sur la vignette pour aller voir une belle photo (36ko)
+</div>
+</div>
+
+<p>L'exemple précédent montre une façon courante de proposer une image
+volumineuse. On fabrique, avec un logiciel de dessin une copie de
+l'image, de toutes petites dimensions, et on l'utilise comme lien vers
+l'image originale (ou mieux, une page contenant cette image). Ainsi
+l'utilisateur est informé que s'il suit ce lien, il aura accès à une
+image de bonne qualité, mais que le temps de chargement risque d'être
+un peu long.
+
+<a name=imgcarte></a><h3>Les cartes cliquables</h3>
+
+<p>On appelle "carte cliquable" une image dans laquelle sont définis
+des zones associées à des liens. Selon l'endroit où l'on clique sur la
+carte, un lien différent est activé.
+
+<p>Il existe théoriquement deux techniques pour construire une telle
+image. Dans la première, les coordonées du point sont envoyées au
+serveur qui renvoie au navigateur l'adresse du lien, celui-ci est
+alors activé.  Cette technique est plus difficile à mettre en oeuvre
+que la suivante, et implique une requête supplémentaire (et donc une
+attente plus longue).  De plus elle est devenue obsolète, et est
+incompatible avec la nécessité d'accessibilité des pages.
+
+<p>Nous allons donc étudier la seconde technique, qui permet de
+spécifier dans la page HTML elle même les différentes zones de la
+carte. Cette carte sera alors interprétée localement, c'est-à-dire que
+le logiciel de navigation déterminera lui-même, en fonction de la
+position du clic sur l'image, du lien à activer. Elle est plus rapide
+et n'empêche pas l'accessibilité du site.
+
+<p>On place l'image comme d'habitude avec l'élément <code>IMG</code>,
+tous les attributs ci-dessus sont autorisés. On ajoute un attribut
+<code>map</code> qui permet d'indiquer le nom de la carte qui doit
+être utilisée.
+
+<div class=exemple-simple><code>&lt;IMG src=imagemap.gif alt="Carte cliquable" usemap=#map&gt;</code></div>
+
+<p>Cette carte est définie avec l'élément <code>MAP</code>. Elle permet de définir les différentes zones avec des éléments <code>AREA</code>.
+
+<div class=exemple><pre>
+&lt;IMG src=imagemap.gif alt="Carte cliquable" usemap=#map&gt;
+<img src=exemples/imagemap.gif usemap=#map1 align=right>
+&lt;MAP name=map&gt;
+&lt;AREA href="index.html"... &gt;
+&lt;AREA href="intro.html"... &gt;
+&lt;AREA href="bases.html"... &gt;
+&lt;AREA href="liens.html"... &gt;
+...
+&lt;/MAP&gt;</pre></div>
+
+<p>Chaque élément <code>AREA</code> définit une zone. Il doit
+comporter différents attributs :<dl>
+<dt>l'attribut <code>href</code>
+<dd>pour indiquer l'adresse du lien correspondant à cette zone<br><br>
+
+<dt>l'attribut <code>shape</code>
+<dd>pour indiquer la forme de la zone. 3 formes sont possibles : 
+<ul><li><em>rect</em> pour un rectangle
+<li><em>circle</em> pour un disque 
+<li><em>poly</em> pour un polygone
+</ul>
+De plus, la valeur <em>default</em> permet de définir un lien qui
+sera activé si l'on clique en dehors des zones définies. L'élément
+<code>AREA</code> contenant cette valeur doit être le dernier de la
+liste.<br><br>
+
+<dt>l'attribut <code>coords</code>
+<dd>pour indiquer les coordonées des différentes formes :
+<ul><li><em>rect</em> : un rectangle est défini par son coin supérieur 
+   gauche (x1,y1) et son coin inférieur droit (x2,y2) 
+   soit <code>coords="x1,y1,x2,y2"</code>
+<li><em>circle</em> un disque est défini par son centre (x,y) et son 
+   rayon (r) <code>coords="x,y,r"</code>
+<li><em>poly</em> un polygone est défini par la liste de ses sommets
+   (x1,y1), (x2,y2), (x3,y3)...    (maximum 100) 
+   soit <code>coords="x1,y1,x2,y2,x3,y3..."</code>
+</ul><br><br>
+
+<dt>l'attribut <code>alt</code>
+<dd>pour indiquer un texte alternatif que les navigateurs textuels pourront
+utiliser.
+</dl>
+
+<p>Les coordonnées sont données en pixels et ont pour origine le coin
+supérieur gauche de l'image.
+
+<p>En supplément, il est possible d'indiquer une zone qui ne doit pas
+réagir (dans le cas de l'utilisation de la valeur <code>default</code>
+de un attribut <code>shape</code>. Pour ce faire, on remplace
+l'attribut <code>href=...</code> par l'attribut <code>nohref</code>
+
+<p>Voici l'exemple précédent complet :
+
+<div class=exemple><pre>
+&lt;IMG src=imagemap.gif alt="Carte cliquable" usemap=#map&gt;
+
+&lt;MAP name=map&gt;
+&lt;AREA href="index.html" shape="rect" coords="10,10,280,40" alt="Cours HTML"&gt;
+&lt;AREA href="intro.html" shape="rect" coords="10,50,70,110" alt="Introduction"&gt;
+&lt;AREA href="bases.html" shape="circle" coords="110,80,30" alt="Bases"&gt;
+&lt;AREA href="textes/liens.html" shape="poly" coords="150,70,180,70,180,50,
+210,80,180,110,180,90,150,90" alt="Liens"&gt;
+&lt;AREA nohref shape="rect" coords="220,50,280,110" alt="Rien"&gt;
+&lt;AREA href="textes/refs.html" shape="default" alt="Références"&gt;
+&lt;/MAP&gt;</pre></div>
+
+
+<MAP name="map1">
+<AREA href="index.html" shape="rect" coords="10,10,280,40" alt="Cours HTML">
+<AREA href="textes/intro.html" shape="rect" coords="10,50,70,110" alt="Introduction">
+<AREA href="textes/bases.html" shape="circle" coords="110,80,30" alt="Bases">
+<AREA href="textes/liens.html" shape="poly" coords="150,70,180,70,180,50,210,80,180,110,180,90,150,90" alt="Liens">
+<AREA nohref shape="rect" coords="220,50,280,110" alt="Rien">
+<AREA href="textes/refs.html" shape="default" alt="Références">
+</MAP>
+
+<div class=navig>
+[&nbsp;<a href="index.html">Cours HTML</a>&nbsp;]
+[&nbsp;<a href="textes/structure.html#sommaire">Sommaire</a>&nbsp;]
+<hr>
+</div>
+
+<p class=fin-chap>Dans le <a href="textes/styles.html">chapitre
+suivant</a> nous allons aborder la forme avec les feuilles de style.
+
+<div class=signature>
+<hr title="séparation">
+<a href="http://calypso.cher.univ-lehavre.fr/~arch">Dominique Archambault</a>, 1998
+</div>
+
+</body>
+</html>
